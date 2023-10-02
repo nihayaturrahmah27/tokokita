@@ -7,13 +7,13 @@ Praktikum Pertemuan 4
  ![alt text](https://github.com/nihayaturrahmah27/tokokita/blob/main/ss/login_page.png?raw=true)
 # 3. Produk
   ![alt text](https://github.com/nihayaturrahmah27/tokokita/blob/main/ss/produk_page.png?raw=true)
-7. Detail Produk
+# 4. Detail Produk
    ![alt text](https://github.com/nihayaturrahmah27/tokokita/blob/main/ss/detail_produk.png?raw=true)
-9. Tambah Produk
+# 5. Tambah Produk
   ![alt text](https://github.com/nihayaturrahmah27/tokokita/blob/main/ss/tambah_produk.png?raw=true)
-11. Edit Produk
+# 6. Edit Produk
    ![alt text](https://github.com/nihayaturrahmah27/tokokita/blob/main/ss/edit_produk.png?raw=true)
-13. Hapus Produk
+# 7. Hapus Produk
    ![alt text](https://github.com/nihayaturrahmah27/tokokita/blob/main/ss/hapus_produk.png?raw=true)
 
 ## Getting Started
