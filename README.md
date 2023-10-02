@@ -1,12 +1,11 @@
 # tokokita
 
 Praktikum Pertemuan 4
-
-
-   ![1. Registrasi](https://github.com/nihayaturrahmah27/tokokita/blob/main/ss/registrasi_page.png?raw=true)
-3. Login
+#1. Registrasi
+   ![alt text](https://github.com/nihayaturrahmah27/tokokita/blob/main/ss/registrasi_page.png?raw=true)
+#2. Login
  ![alt text](https://github.com/nihayaturrahmah27/tokokita/blob/main/ss/login_page.png?raw=true)
-5. Produk
+#3. Produk
   ![alt text](https://github.com/nihayaturrahmah27/tokokita/blob/main/ss/produk_page.png?raw=true)
 7. Detail Produk
    ![alt text](https://github.com/nihayaturrahmah27/tokokita/blob/main/ss/detail_produk.png?raw=true)
