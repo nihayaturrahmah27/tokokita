@@ -1,6 +1,21 @@
 # tokokita
 
-A new Flutter project.
+Praktikum Pertemuan 4
+
+1. Registrasi
+   ![alt text](https://github.com/nihayaturrahmah27/tokokita/blob/main/ss/registrasi_page.png?raw=true)
+3. Login
+ ![alt text](https://github.com/nihayaturrahmah27/tokokita/blob/main/ss/login_page.png?raw=true)
+5. Produk
+  ![alt text](https://github.com/nihayaturrahmah27/tokokita/blob/main/ss/produk_page.png?raw=true)
+7. Detail Produk
+   ![alt text](https://github.com/nihayaturrahmah27/tokokita/blob/main/ss/detail_produk.png?raw=true)
+9. Tambah Produk
+  ![alt text](https://github.com/nihayaturrahmah27/tokokita/blob/main/ss/tambah_produk.png?raw=true)
+11. Edit Produk
+   ![alt text](https://github.com/nihayaturrahmah27/tokokita/blob/main/ss/edit_produk.png?raw=true)
+13. Hapus Produk
+   ![alt text](https://github.com/nihayaturrahmah27/tokokita/blob/main/ss/hapus_produk.png?raw=true)
 
 ## Getting Started
 
