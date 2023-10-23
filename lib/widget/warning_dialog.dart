@@ -43,6 +43,7 @@ class WarningDialog extends StatelessWidget {
           BoxShadow(
             color: Colors.black26,
             blurRadius: 10.0,
+            offset: Offset(0.0, 10.0),
           ),
         ],
       ),
@@ -52,7 +53,10 @@ class WarningDialog extends StatelessWidget {
           const Text(
             "GAGAL",
             style: TextStyle(
-                fontSize: 24.0, fontWeight: FontWeight.w700, color: Colors.red),
+              fontSize: 24.0,
+              fontWeight: FontWeight.w700,
+              color: Colors.red,
+            ),
           ),
           const SizedBox(height: 16.0),
           Text(
@@ -72,7 +76,7 @@ class WarningDialog extends StatelessWidget {
               },
               child: const Text("OK"),
             ),
-          ),
+          )
         ],
       ),
     );

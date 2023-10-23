@@ -76,7 +76,7 @@ class SuccessDialog extends StatelessWidget {
               },
               child: const Text("OK"),
             ),
-          ),
+          )
         ],
       ),
     );

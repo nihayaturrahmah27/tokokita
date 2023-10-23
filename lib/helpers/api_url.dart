@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_interpolation_to_compose_strings
+
 class ApiUrl {
   static const String baseUrl = 'http://192.168.1.85/toko-api/public';
 

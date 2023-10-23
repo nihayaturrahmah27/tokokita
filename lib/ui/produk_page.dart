@@ -1,5 +1,3 @@
-// ignore_for_file: library_private_types_in_public_api
-
 import 'package:flutter/material.dart';
 import 'package:tokokita/bloc/logout_bloc.dart';
 import 'package:tokokita/bloc/produk_bloc.dart';
@@ -12,6 +10,7 @@ class ProdukPage extends StatefulWidget {
   const ProdukPage({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _ProdukPageState createState() => _ProdukPageState();
 }
 
@@ -20,7 +19,7 @@ class _ProdukPageState extends State<ProdukPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('List Produk - Nia'),
+        title: const Text('List Produk'),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20.0),
@@ -31,7 +30,7 @@ class _ProdukPageState extends State<ProdukPage> {
                     MaterialPageRoute(builder: (context) => ProdukForm()));
               },
             ),
-          )
+          ),
         ],
       ),
       drawer: Drawer(
@@ -41,18 +40,22 @@ class _ProdukPageState extends State<ProdukPage> {
               title: const Text('Logout'),
               trailing: const Icon(Icons.logout),
               onTap: () async {
-                await LogoutBloc.logout().then((value) {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => LoginPage()));
-                });
+                await LogoutBloc.logout().then((value) => {
+                      // ignore: prefer_const_constructors
+                      Navigator.pushReplacement(
+                          context,
+                          // ignore: prefer_const_constructors
+                          MaterialPageRoute(builder: (context) => LoginPage())),
+                    });
               },
-            )
+            ),
           ],
         ),
       ),
-      body: FutureBuilder<List<Produk>>(
+      body: FutureBuilder<List>(
         future: ProdukBloc.getProduks(),
         builder: (context, snapshot) {
+          // ignore: avoid_print
           if (snapshot.hasError) print(snapshot.error);
           return snapshot.hasData
               ? ListProduk(
@@ -68,7 +71,7 @@ class _ProdukPageState extends State<ProdukPage> {
 }
 
 class ListProduk extends StatelessWidget {
-  final List<Produk>? list;
+  final List? list;
 
   const ListProduk({Key? key, this.list}) : super(key: key);
 
@@ -77,7 +80,9 @@ class ListProduk extends StatelessWidget {
     return ListView.builder(
       itemCount: list == null ? 0 : list!.length,
       itemBuilder: (context, i) {
-        return ItemProduk(produk: list![i]);
+        return ItemProduk(
+          produk: list![i],
+        );
       },
     );
   }
@@ -94,7 +99,11 @@ class ItemProduk extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => ProdukDetail(produk: produk)),
+          MaterialPageRoute(
+            builder: (context) => ProdukDetail(
+              produk: produk,
+            ),
+          ),
         );
       },
       child: Card(

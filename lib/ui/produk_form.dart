@@ -1,4 +1,4 @@
-// ignore_for_file: library_private_types_in_public_api
+// ignore_for_file: must_be_immutable, library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
 import 'package:tokokita/bloc/produk_bloc.dart';
@@ -6,7 +6,6 @@ import 'package:tokokita/model/produk.dart';
 import 'package:tokokita/ui/produk_page.dart';
 import 'package:tokokita/widget/warning_dialog.dart';
 
-// ignore: must_be_immutable
 class ProdukForm extends StatefulWidget {
   Produk? produk;
 
@@ -19,7 +18,7 @@ class ProdukForm extends StatefulWidget {
 class _ProdukFormState extends State<ProdukForm> {
   final _formKey = GlobalKey<FormState>();
   bool _isLoading = false;
-  String judul = "TAMBAH PRODUK - NIA";
+  String judul = "TAMBAH PRODUK";
   String tombolSubmit = "SIMPAN";
 
   final _kodeProdukTextboxController = TextEditingController();
@@ -32,10 +31,10 @@ class _ProdukFormState extends State<ProdukForm> {
     isUpdate();
   }
 
-  void isUpdate() {
+  isUpdate() {
     if (widget.produk != null) {
       setState(() {
-        judul = "UBAH PRODUK - NIA";
+        judul = "UBAH PRODUK";
         tombolSubmit = "UBAH";
         _kodeProdukTextboxController.text = widget.produk!.kodeProduk!;
         _namaProdukTextboxController.text = widget.produk!.namaProduk!;
@@ -121,10 +120,10 @@ class _ProdukFormState extends State<ProdukForm> {
         if (validate) {
           if (!_isLoading) {
             if (widget.produk != null) {
-              // Condition for updating product
+              //kondisi update produk
               ubah();
             } else {
-              // Condition for adding product
+              //kondisi tambah produk
               simpan();
             }
           }
@@ -133,7 +132,7 @@ class _ProdukFormState extends State<ProdukForm> {
     );
   }
 
-  void simpan() {
+  simpan() {
     setState(() {
       _isLoading = true;
     });
@@ -141,11 +140,9 @@ class _ProdukFormState extends State<ProdukForm> {
     createProduk.kodeProduk = _kodeProdukTextboxController.text;
     createProduk.namaProduk = _namaProdukTextboxController.text;
     createProduk.hargaProduk = int.parse(_hargaProdukTextboxController.text);
-
     ProdukBloc.addProduk(produk: createProduk).then((value) {
       Navigator.of(context).push(MaterialPageRoute(
-        builder: (BuildContext context) => const ProdukPage(),
-      ));
+          builder: (BuildContext context) => const ProdukPage()));
     }, onError: (error) {
       showDialog(
         context: context,
@@ -159,20 +156,18 @@ class _ProdukFormState extends State<ProdukForm> {
     });
   }
 
-  void ubah() {
+  ubah() {
     setState(() {
       _isLoading = true;
     });
     Produk updateProduk = Produk(id: null);
     updateProduk.id = widget.produk!.id;
     updateProduk.kodeProduk = _kodeProdukTextboxController.text;
+    updateProduk.namaProduk = _namaProdukTextboxController.text;
     updateProduk.hargaProduk = int.parse(_hargaProdukTextboxController.text);
     ProdukBloc.updateProduk(produk: updateProduk).then((value) {
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (BuildContext context) => const ProdukPage(),
-        ),
-      );
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (BuildContext context) => const ProdukPage()));
     }, onError: (error) {
       showDialog(
         context: context,
